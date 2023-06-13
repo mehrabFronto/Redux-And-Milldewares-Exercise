@@ -3,6 +3,7 @@ import "./App.css";
 import CakeContainer from "./components/CakeContainer";
 import store from "./redux/store";
 import IceCreamContainer from "./components/IceCreamContainer";
+import UsersContainer from "./components/UsersContainer";
 
 const App = () => {
    return (
@@ -10,6 +11,7 @@ const App = () => {
          <Provider store={store}>
             <CakeContainer />
             <IceCreamContainer />
+            <UsersContainer />
          </Provider>
       </h1>
    );
