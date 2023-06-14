@@ -13,7 +13,7 @@ const initialState = {
 const postReducer = (state = initialState, action) => {
    switch (action.type) {
       case FETCH_POST_REQUEST:
-         return { ...state, loading: true, post: null, error: null };
+         return { ...state, loading: true };
 
       case FETCH_POST_SUCCESS:
          return {

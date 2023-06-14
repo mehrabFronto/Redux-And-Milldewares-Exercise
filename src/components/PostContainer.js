@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPost } from "../redux/post/postActions";
+import { fetchPostRequest } from "../redux/post/postActions";
 
-const PostsContainer = () => {
-   const [postId, setPostId] = useState();
+const PostContainer = () => {
+   const [postId, setPostId] = useState("");
    const { loading, post, error } = useSelector((state) => state.post);
    const dispatch = useDispatch();
 
    useEffect(() => {
-      dispatch(fetchPost(postId));
+      dispatch(fetchPostRequest(postId));
    }, [postId]);
 
    const renderPost = () => {
@@ -37,4 +37,4 @@ const PostsContainer = () => {
    );
 };
 
-export default PostsContainer;
+export default PostContainer;

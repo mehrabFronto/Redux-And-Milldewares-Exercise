@@ -3,11 +3,12 @@ import {
    FETCH_POST_SUCCESS,
    FETCH_POST_FAILURE,
 } from "./postTypes";
-import axios from "axios";
+// import axios from "axios";
 
-export function fetchPostRequest() {
+export function fetchPostRequest(id) {
    return {
       type: FETCH_POST_REQUEST,
+      payload: id,
    };
 }
 
@@ -25,12 +26,12 @@ export function fetchPostFailure(error) {
    };
 }
 
-export const fetchPost = (id) => {
-   return function (dispatch) {
-      dispatch(fetchPostRequest());
-      axios
-         .get(`http://jsonplaceholder.typicode.com/posts/${id}`)
-         .then((res) => dispatch(fetchPostSuccess(res.data)))
-         .catch((err) => dispatch(fetchPostFailure(err.message)));
-   };
-};
+// export const fetchPost = (id) => {
+//    return function (dispatch) {
+//       dispatch(fetchPostRequest());
+//       axios
+//          .get(`http://jsonplaceholder.typicode.com/posts/${id}`)
+//          .then((res) => dispatch(fetchPostSuccess(res.data)))
+//          .catch((err) => dispatch(fetchPostFailure(err.message)));
+//    };
+// };
