@@ -29,7 +29,7 @@ export const fetchUsers = () => {
    return function (dispatch) {
       dispatch(fetchUsersRequest());
       axios
-         .get("https://jsonplaceholder.typicode.com/user ")
+         .get("https://jsonplaceholder.typicode.com/users")
          .then((res) => dispatch(fetchUsersSuccess(res.data)))
          .catch((err) => dispatch(fetchUsersFailure(err.message)));
    };
